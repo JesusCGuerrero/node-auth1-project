@@ -7,20 +7,7 @@ const router = express.Router();
 const Users = require("./users-model");
 const {isValid} = require("./users-service")
 
-// router.get('/', (req, res) => {
-//   if (req.session && req.session.user) {
-//     const { username, password } = req.headers;
-//     Users.find()
-//     .then(users => {
-//       res.json(users);
-//     })
-//     .catch(err => res.send(err));
-//   } else {
-//     res.status(401).json({ message: "You shall not pass!" })
-//   }
-// })
-
-router.get('/', (req, res, next) => {
+router.get('/users', (req, res, next) => {
   if (req.session && req.session.loggedIn) {
       Users.find()
       .then(users => {

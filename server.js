@@ -24,7 +24,7 @@ server.use(express.json());
 server.use(cors());
 server.use(session(sessionConfig))
 
-server.use("/api/users", usersRouter);
+server.use("/api", usersRouter);
 
 server.get("/", (req, res) => {
   res.json({ api: "up" });
